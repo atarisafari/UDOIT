@@ -52,6 +52,6 @@ header("Pragma: no-cache"); // HTTP 1.0.
 header("Expires: 0"); // Proxies.
 
 // Messages
-$udoit_welcome_message = 'testing';
+$udoit_welcome_message = 'Is this thing on?';
 
-$udoit_disclaimer_message = 'Please Note: This tool is meant to be used as a guide, not a certification. It only checks for common accessibility issues, and is not comprehensive; a clean report in U<strong>DO</strong>IT does not necessarily mean that your course is fully accessible. Likewise, the tool may indicate a possible accessibility issue where one does not exist.';
+$udoit_disclaimer_message = 'No';
