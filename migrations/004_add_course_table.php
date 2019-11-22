@@ -8,12 +8,9 @@ if ('sqlite' === $db_type || 'test' === $db_type) {
         '
             CREATE TABLE IF NOT EXISTS courses (
                 id integer PRIMARY KEY AUTOINCREMENT,
-                user_id integer,
-                course_id integer,
-                report_json text,
-                date_run timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
-                errors integer,
-                suggestions integer
+                canvas_id integer,
+                name text,
+                term text
             );
         '
     ];
@@ -26,12 +23,9 @@ if ('pgsql' === $db_type) {
         '
             CREATE TABLE IF NOT EXISTS courses (
                 id SERIAL PRIMARY KEY,
-                user_id integer,
-                course_id integer,
-                report_json text,
-                date_run timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
-                errors integer,
-                suggestions integer
+                canvas_id integer,
+                name text,
+                term text
             );
         '
     ];
@@ -44,12 +38,7 @@ if ('mysql' === $db_type) {
         '
             CREATE TABLE IF NOT EXISTS `reports` (
                 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-                `user_id` int(10) unsigned NOT NULL,
-                `course_id` int(10) unsigned NOT NULL,
-                `report_json` MEDIUMTEXT NOT NULL,
-                `date_run` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-                `errors` int(10) unsigned NOT NULL,
-                `suggestions` int(10) unsigned NOT NULL,
+                `canvas_id` int(10) unsigned NOT NULL,
                 PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
         '
