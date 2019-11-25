@@ -36,9 +36,11 @@ if ('mysql' === $db_type) {
     echo("Setting up tables in MySQL\r\n");
     $tables = [
         '
-            CREATE TABLE IF NOT EXISTS `reports` (
+            CREATE TABLE IF NOT EXISTS `courses` (
                 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
                 `canvas_id` int(10) unsigned NOT NULL,
+                `name` varchar(255) NOT NULL,
+                `term` varchar(255) NOT NULL,
                 PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
         '

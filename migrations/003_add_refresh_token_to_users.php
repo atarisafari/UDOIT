@@ -36,6 +36,10 @@ if ('sqlite' === $db_type || 'test' === $db_type) {
             'isRequired' => !$check_for_column('users', 'canvas_url'),
             'sql' => 'ALTER TABLE users ADD canvas_url VARCHAR(255)',
         ],
+        [
+            'isRequired' => !$check_for_column('users', 'username'),
+            'sql' => 'ALTER TABLE users ADD username VARCHAR(255)',
+        ],
     ];
 }
 
@@ -51,6 +55,10 @@ if ('pgsql' === $db_type) {
             'isRequired' => !$check_for_column('users', 'canvas_url'),
             'sql' => 'ALTER TABLE users ADD canvas_url VARCHAR(255)',
         ],
+        [
+            'isRequired' => !$check_for_column('users', 'username'),
+            'sql' => 'ALTER TABLE users ADD username VARCHAR(255)',
+        ],
     ];
 }
 
@@ -65,6 +73,10 @@ if ('mysql' === $db_type) {
         [
             'isRequired' => !$check_for_column('users', 'canvas_url'),
             'sql' => 'ALTER TABLE users ADD canvas_url VARCHAR(255) NOT NULL',
+        ],
+        [
+            'isRequired' => !$check_for_column('users', 'username'),
+            'sql' => 'ALTER TABLE users ADD username VARCHAR(255) NOT NULL',
         ],
     ];
 }
