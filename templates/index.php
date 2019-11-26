@@ -24,6 +24,7 @@ $settings = [
 		"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js",
 		"//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
 		"//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js",
+		"//cdn.jsdelivr.net/npm/chart.js@2.8.0",
 		"assets/js/vendor/jscolor/jscolor.js",
 		"assets/js/resize.js?v=".UDOIT_VERSION,
 		"assets/js/default.js?v=".UDOIT_VERSION,
@@ -50,22 +51,6 @@ $this->layout('template', $settings);
 					<p><?= $disclaimer_message; ?></p>
 
 					<div class="container">
-  <h2>Dropdowns</h2>
-  <p>The .dropdown class is used to indicate a dropdown menu.</p>
-  <p>Use the .dropdown-menu class to actually build the dropdown menu.</p>
-  <p>To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and data-toggle="dropdown".</p>                                          
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
-</div>
-
 					<p class="no-margin"><a href="#udoitInfo" class="btn btn-sm btn-default no-print" data-toggle="modal" data-target="#udoitInfo">What does UDOIT look for?</a></p>
 				</div>
 			</div>
