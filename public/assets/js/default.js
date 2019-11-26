@@ -30,12 +30,6 @@ var data = {
 		'Red',
 		'Yellow',
 		'Blue'
-	],
-
-	backgroundColor: [
-		rgba(192,196,192,1),
-		rgba(192,193,12,1),
-		rgba(192,19,92,1)
 	]
 }
 var chart = new Chart(ctx, {
