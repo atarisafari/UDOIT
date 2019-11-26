@@ -60,6 +60,8 @@ $this->layout('template', $settings);
 				<input type="hidden" name="session_course_id" value="<?= $this->escape($launch_params['custom_canvas_course_id']); ?>">
 				<input type="hidden" name="session_context_label" value="<?= $this->escape($launch_params['context_label']); ?>">
 				<input type="hidden" name="session_context_title" value="<?= $this->escape($launch_params['context_title']); ?>">
+				
+				<canvas id="myChart"></canvas>
 
 				<div class="form-group">
 					<span class="col-sm-2 control-label"><strong>Content:</strong></span>
