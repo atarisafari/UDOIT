@@ -37,7 +37,7 @@ var chart = new Chart(ctx, {
 	data: data,
 });
 
-console.log(chart.data.datasets[0].data)
+chart.data.datasets[0].data.backgroundColor = "rgba(192,192,192,1)"
 chart.update();
 
 /* Escapes special characters for use in jquery selectors. */
