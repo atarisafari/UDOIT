@@ -33,10 +33,9 @@ var data = {
 	],
 
 	backgroundColor: [
-		'red',    // color for data at index 0
-		'blue',   // color for data at index 1
-		'green',  // color for data at index 2
-		//...
+		rgba(192,196,192,1),
+		rgba(192,193,12,1),
+		rgba(192,19,92,1)
 	]
 }
 var chart = new Chart(ctx, {
