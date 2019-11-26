@@ -32,7 +32,7 @@ var data = {
 		'Blue'
 	],
 
-	color: [
+	backgroundColor: [
 		'red',    // color for data at index 0
 		'blue',   // color for data at index 1
 		'green',  // color for data at index 2
