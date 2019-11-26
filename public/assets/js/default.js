@@ -21,9 +21,17 @@ var progressTimer = null;
 var $doc = $(document); // hold a jquery doc reference
 
 var ctx = document.getElementById('myChart').getContext('2d');
+var options = {
+	color: [
+		'red',    // color for data at index 0
+		'blue',   // color for data at index 1
+		'green',  // color for data at index 2
+		//...
+	]
+}
 var data = {
 	datasets: [{
-		data: [10, 20, 30]
+		data: [10, 20, 30],
 	}],
 
 	labels: [
@@ -35,6 +43,7 @@ var data = {
 var chart = new Chart(ctx, {
 	type: 'pie',
 	data: data,
+	options: options
 });
 
 /* Escapes special characters for use in jquery selectors. */
