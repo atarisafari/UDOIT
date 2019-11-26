@@ -37,8 +37,7 @@ var chart = new Chart(ctx, {
 	data: data,
 });
 
-console.log(chart.type)
-console.log(chart.data)
+console.log(chart.data.datasets[0].data)
 chart.update();
 
 /* Escapes special characters for use in jquery selectors. */
