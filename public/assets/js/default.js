@@ -21,23 +21,21 @@ var progressTimer = null;
 var $doc = $(document); // hold a jquery doc reference
 
 var ctx = document.getElementById('myChart').getContext('2d');
+var data = {
+	datasets: [{
+		data: [10, 20, 30]
+	}],
+
+	labels: [
+		'Red',
+		'Yellow',
+		'Blue'
+	]
+}
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
+	type: 'pie',
+	data: data,
+	options: options
 });
 
 /* Escapes special characters for use in jquery selectors. */
