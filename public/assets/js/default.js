@@ -23,22 +23,22 @@ var $doc = $(document); // hold a jquery doc reference
 var ctx = document.getElementById('myChart').getContext('2d');
 var data = {
 	datasets: [{
+		label: "Which animal has the most swag?",
+		backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
 		data: [10, 20, 30],
 	}],
 
 	labels: [
-		'Red',
-		'Yellow',
-		'Blue'
+		'Dogs',
+		'Cats',
+		'Birds'
 	]
 }
+
 var chart = new Chart(ctx, {
 	type: 'pie',
 	data: data,
 });
-
-chart.data.datasets[0].data.backColor = "rgba(192,192,192,1)";
-chart.update();
 
 /* Escapes special characters for use in jquery selectors. */
 function escapeSelector(sel){
