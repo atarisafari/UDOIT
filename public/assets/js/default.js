@@ -20,34 +20,63 @@
 var progressTimer = null;
 var $doc = $(document); // hold a jquery doc reference
 
-var ctx = document.getElementById('myChart').getContext('2d');
-var data = {
-	datasets: [{
-		label: "Which animal has the most swag?",
-		backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
-		data: [10, 20, 30, 5],
-	}],
+function displayAnalytics(data, labels, title) {
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var data = {
+		datasets: [{
+			label: "Which animal has the most swag?",
+			backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+			data: [10, 20, 30, 5],
+		}],
 
-	labels: [
-		'Dog',
-		'Cat',
-		'Bird',
-		'Mammoth'
-	]
-}
-
-var options = {
-	title: {
-		display: true,
-		text: "Which animal has the most swag?"
+		labels: [
+			'Dog',
+			'Cat',
+			'Bird',
+			'Mammoth'
+		]
 	}
+
+	var options = {
+		title: {
+			display: true,
+			text: "Which animal has the most swag?"
+		}
+	}
+
+	var chart = new Chart(ctx, {
+		type: 'polarArea',
+		data: data,
+		options: options
+	});
 }
 
-var chart = new Chart(ctx, {
-	type: 'pie',
-	data: data,
-	options: options
-});
+function prepareAnalytics() {
+	$.ajax({
+		url: `analytics.php`,
+		dataType: 'json',
+		error: function(xhr, status, error) {
+			// handle errors
+		},
+		success: function(progressResult){
+			// empty or not an array, error!
+			if(!progressResult.hasOwnProperty('status')){
+				clearInterval(progressTimer);
+				killButton();
+				$('#failMsg').fadeIn();
+				return;
+			}
+
+			if(progressResult.status === 'finished'){
+				clearInterval(progressTimer);
+				$('#udoitForm button.submit')
+				.html(`<div id="popup"><div class="circle-white"></div></div>Loading Results`);
+				loadScanResults(progressResult.reportID);
+				return;
+			}
+		}
+	});
+}
 
 /* Escapes special characters for use in jquery selectors. */
 function escapeSelector(sel){
@@ -330,6 +359,11 @@ $doc.ready(function(){
 		window.open($(this).attr('href'));
 		return false;
 	});
+});
+
+$(document).ready(function(){
+	// we call the function
+	displayAnalytics();
 });
 
 // END update UFIXIT Preview on load
