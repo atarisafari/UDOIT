@@ -20,7 +20,8 @@
 var progressTimer = null;
 var $doc = $(document); // hold a jquery doc reference
 
-function displayAnalytics() {
+function displayAnalytics(data) {
+	console.log(data);
 	var ctx = document.getElementById('myChart').getContext('2d');
 	var data = {
 		datasets: [{
@@ -198,6 +199,7 @@ function loadScanResults(reportID){
 		},
 		success: function(data){
 			displayScanResults(data)
+			displayAnalytics(data)
 		}
 	});
 }

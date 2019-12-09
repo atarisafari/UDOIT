@@ -24,3 +24,9 @@ session_start();
 $user_id = $_SESSION['launch_params']['custom_canvas_user_id'];
 UdoitUtils::$canvas_base_url = $_SESSION['base_url'];
 session_write_close();
+
+//Number of scans per month
+$sth = UdoitDB::prepare("SELECT results, Date_completed, FROM {$db_job_queue_table} WHERE user_id = :user_id");
+$sth->bindValue(":user_id", $user_id);
+$sth->execute();
+$jobs = $sth->fetchAll();
