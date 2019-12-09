@@ -46,6 +46,7 @@ var options = {
 var chart = new Chart(ctx, {
 	type: 'pie',
 	data: data,
+	options: options
 });
 
 /* Escapes special characters for use in jquery selectors. */
