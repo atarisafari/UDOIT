@@ -60,7 +60,6 @@ function prepareAnalytics(reportID) {
 			console.log(":(")
 		},
 		success: function(data){
-			console.log(data);
 			displayAnalytics(data);
 		}
 	});
