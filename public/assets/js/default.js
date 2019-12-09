@@ -45,7 +45,7 @@ function displayAnalytics() {
 	}
 
 	var chart = new Chart(ctx, {
-		type: 'polarArea',
+		type: 'doughnut',
 		data: data,
 		options: options
 	});
