@@ -22,6 +22,7 @@ var $doc = $(document); // hold a jquery doc reference
 
 function displayAnalytics(results) {
 	var ctx = document.getElementById('myChart').getContext('2d');
+	console.log(results.error_count);
 	var data = {
 		datasets: [{
 			backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
