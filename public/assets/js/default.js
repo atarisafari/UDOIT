@@ -24,15 +24,23 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var data = {
 	datasets: [{
 		label: "Which animal has the most swag?",
-		backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-		data: [10, 20, 30],
+		backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+		data: [10, 20, 30, 5],
 	}],
 
 	labels: [
-		'Dogs',
-		'Cats',
-		'Birds'
+		'Dog',
+		'Cat',
+		'Bird',
+		'Mammoth'
 	]
+}
+
+var options = {
+	title: {
+		display: true,
+		text: "Which animal has the most swag?"
+	}
 }
 
 var chart = new Chart(ctx, {
