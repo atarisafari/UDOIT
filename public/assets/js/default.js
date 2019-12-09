@@ -20,7 +20,7 @@
 var progressTimer = null;
 var $doc = $(document); // hold a jquery doc reference
 
-function displayAnalytics(data, labels, title) {
+function displayAnalytics() {
 	var ctx = document.getElementById('myChart').getContext('2d');
 	var data = {
 		datasets: [{
