@@ -22,6 +22,7 @@ var $doc = $(document); // hold a jquery doc reference
 
 function displayAnalytics(results) {
 	var ctx = document.getElementById('myChart').getContext('2d');
+	results = json.parse(results);
 	console.log(results[0].error_count);
 	var data = {
 		datasets: [{
