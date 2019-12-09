@@ -21,7 +21,6 @@ var progressTimer = null;
 var $doc = $(document); // hold a jquery doc reference
 
 function displayAnalytics(data) {
-	console.log(data);
 	var ctx = document.getElementById('myChart').getContext('2d');
 	var data = {
 		datasets: [{
@@ -58,6 +57,7 @@ function prepareAnalytics(reportID) {
 		xhrFields: {withCredentials: true},
 		error: function(xhr, status, error) {
 			// TODO: show error to user
+			console.log(":(")
 		},
 		success: function(data){
 			console.log(data);
