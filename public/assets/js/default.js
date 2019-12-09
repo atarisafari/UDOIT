@@ -52,29 +52,16 @@ function displayAnalytics(data) {
 	});
 }
 
-function prepareAnalytics() {
+function prepareAnalytics(reportID) {
 	$.ajax({
-		url: `analytics.php`,
-		dataType: 'json',
+		url: `analytics.php?report_id=${reportID}`,
+		xhrFields: {withCredentials: true},
 		error: function(xhr, status, error) {
-			// handle errors
+			// TODO: show error to user
 		},
-		success: function(progressResult){
-			// empty or not an array, error!
-			if(!progressResult.hasOwnProperty('status')){
-				clearInterval(progressTimer);
-				killButton();
-				$('#failMsg').fadeIn();
-				return;
-			}
-
-			if(progressResult.status === 'finished'){
-				clearInterval(progressTimer);
-				$('#udoitForm button.submit')
-				.html(`<div id="popup"><div class="circle-white"></div></div>Loading Results`);
-				loadScanResults(progressResult.reportID);
-				return;
-			}
+		success: function(data){
+			console.log(data);
+			displayAnalytics(data)
 		}
 	});
 }
@@ -159,6 +146,7 @@ function checkScanProgress(jobGroup){
 					$('#udoitForm button.submit')
 					.html(`<div id="popup"><div class="circle-white"></div></div>Loading Results`);
 					loadScanResults(progressResult.reportID);
+					prepareAnalytics(progressResult.reportID);
 					return;
 				}
 				else{
@@ -199,7 +187,6 @@ function loadScanResults(reportID){
 		},
 		success: function(data){
 			displayScanResults(data)
-			displayAnalytics(data)
 		}
 	});
 }
