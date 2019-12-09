@@ -27,7 +27,7 @@ function displayAnalytics(results) {
 	var data = {
 		datasets: [{
 			backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-			data: [results['error_count'], results['suggestion_count'], results['unscannable_count']],
+			data: [results.error_count, results.suggestion_count, results.unscannable_count],
 		}],
 
 		labels: [
