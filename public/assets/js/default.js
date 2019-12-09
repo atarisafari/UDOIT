@@ -20,27 +20,25 @@
 var progressTimer = null;
 var $doc = $(document); // hold a jquery doc reference
 
-function displayAnalytics(data) {
+function displayAnalytics(results) {
 	var ctx = document.getElementById('myChart').getContext('2d');
 	var data = {
 		datasets: [{
-			label: "Which animal has the most swag?",
-			backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
-			data: [10, 20, 30, 5],
+			backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+			data: [results.error_count, results.suggestion_count, results.unscannable_count],
 		}],
 
 		labels: [
-			'Dog',
-			'Cat',
-			'Bird',
-			'Mammoth'
+			'Error Count',
+			'Suggestion Count',
+			'Unscannable Count'
 		]
 	}
 
 	var options = {
 		title: {
 			display: true,
-			text: "Which animal has the most swag?"
+			text: "Report Analytics"
 		}
 	}
 
@@ -350,10 +348,10 @@ $doc.ready(function(){
 	});
 });
 
-$(document).ready(function(){
-	// we call the function
-	displayAnalytics();
-});
+// $(document).ready(function(){
+// 	// we call the function
+// 	displayAnalytics();
+// });
 
 // END update UFIXIT Preview on load
 $doc.ready(function() {

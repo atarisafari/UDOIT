@@ -66,6 +66,4 @@ $results = [
     'fixable_suggestions' => ["aSuspiciousLinkText", "imgHasAlt", "aLinkTextDoesNotBeginWithRedundantWord", "cssTextStyleEmphasize", "pNotUsedAsHeader"],
 ];
 
-$logger->addError($results);
-$logger->addError(json_encode($results));
 echo(json_encode($results));
