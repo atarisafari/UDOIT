@@ -40,11 +40,18 @@ function displayAnalytics(results) {
 		title: {
 			display: true,
 			text: "Report Analytics"
-		}
+		},
+		scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
 	}
 
 	var chart = new Chart(ctx, {
-		type: 'bar',
+		type: 'doughnut',
 		data: data,
 		options: options
 	});
