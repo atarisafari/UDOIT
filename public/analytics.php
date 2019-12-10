@@ -53,6 +53,8 @@ if (empty($report)) {
 }
 
 $ordered_report_groups = UdoitUtils::instance()->sortReportGroups($report->content);
+
+// Add total number of items per section so that you can show accessibility percentage 
 $results = [
     'course'              => $report->course,
     'error_count'         => $report->total_results->errors,
