@@ -51,7 +51,7 @@ function displayAnalytics(results) {
 	}
 
 	var chart = new Chart(ctx, {
-		type: 'doughnut',
+		type: 'bar',
 		data: data,
 		options: options
 	});
