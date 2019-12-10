@@ -23,12 +23,10 @@ var $doc = $(document); // hold a jquery doc reference
 function displayAnalytics(results) {
 	var ctx = document.getElementById('myChart').getContext('2d');
 	results = JSON.parse(results);
-	console.log(results.error_count);
 	var data = {
 		datasets: [{
 			backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
 			data: [results.error_count, results.suggestion_count, results.unscannable_count],
-			labels: ['errors', 'suggestions', 'unscannable']
 		}],
 
 		labels: [
@@ -58,7 +56,7 @@ function prepareAnalytics(reportID) {
 		xhrFields: {withCredentials: true},
 		error: function(xhr, status, error) {
 			// TODO: show error to user
-			console.log(":(")
+			console.log(error);
 		},
 		success: function(data){
 			displayAnalytics(data);
