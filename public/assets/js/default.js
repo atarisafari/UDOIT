@@ -56,7 +56,7 @@ function displayAnalytics(results) {
 		options: options
 	});
 
-	var barChart = document.getElementById('myChart2').getContext('2d');
+	// var barChart = document.getElementById('myChart2').getContext('2d');
 }
 
 function prepareAnalytics(reportID) {
