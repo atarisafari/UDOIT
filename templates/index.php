@@ -50,7 +50,6 @@ $this->layout('template', $settings);
 
 					<p><?= $disclaimer_message; ?></p>
 
-					<div class="container">
 					<p class="no-margin"><a href="#udoitInfo" class="btn btn-sm btn-default no-print" data-toggle="modal" data-target="#udoitInfo">What does UDOIT look for?</a></p>
 				</div>
 			</div>
