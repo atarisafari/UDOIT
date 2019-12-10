@@ -44,10 +44,12 @@ function displayAnalytics(results) {
 	}
 
 	var chart = new Chart(ctx, {
-		type: 'doughnut',
+		type: 'bar',
 		data: data,
 		options: options
 	});
+
+	var barChart = document.getElementById('myChart2').getContext('2d');
 }
 
 function prepareAnalytics(reportID) {
