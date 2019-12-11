@@ -33,10 +33,10 @@ global $file_scan_size_limit;
 		</div>
 		<div class="errorSummary panel-body" style="display: block;">
 			<div>
-				<canvas id="myChart" width="200" height="200"></canvas>
+				<canvas id="myChart" width="50" height="50"></canvas>
 			</div>
 			<div>
-				<canvas id="secondChart" width="200" height="200"></canvas>
+				<canvas id="secondChart" width="50" height="50"></canvas>
 			</div>
 			<?php if( !empty($error_summary) ): ?>
 			<div class="panel panel-danger">
