@@ -66,7 +66,12 @@ function displayAnalytics(results) {
 		options: options
 	});
 
-	// var barChart = document.getElementById('myChart2').getContext('2d');
+	var doughnut = document.getElementById('secondChart').getContext('2d');
+
+	var chart = new Chart(doughnut, {
+		type: 'doughnut',
+		data: data
+	})
 }
 
 function prepareAnalytics(reportID) {
