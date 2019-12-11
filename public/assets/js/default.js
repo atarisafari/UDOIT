@@ -25,15 +25,21 @@ function displayAnalytics(results) {
 	results = JSON.parse(results);
 	var data = {
 		datasets: [{
-			backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+			backgroundColor: ["#757780", "#d2cca1","#387780", "#dbd4d3", "#e83151"],
 			// data: [results.error_count, results.suggestion_count, results.unscannable_count],
-			data: [100, 30, 45],
+			data: [30, 40, 45, 60, 100],
 		}],
-
+		// labels: [
+		// 	'Error Count',
+		// 	'Suggestion Count',
+		// 	'Unscannable Count'
+		// ]
 		labels: [
-			'Error Count',
-			'Suggestion Count',
-			'Unscannable Count'
+			'Pages',
+			'Assignments',
+			'Module Urls',
+			'Quizzes',
+			'Discussions'
 		]
 	}
 
