@@ -26,7 +26,8 @@ function displayAnalytics(results) {
 	var data = {
 		datasets: [{
 			backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-			data: [results.error_count, results.suggestion_count, results.unscannable_count],
+			// data: [results.error_count, results.suggestion_count, results.unscannable_count],
+			data: [100, 30, 45],
 		}],
 
 		labels: [
@@ -44,7 +45,10 @@ function displayAnalytics(results) {
 		scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+					beginAtZero: true,
+					callback: function(value) {
+						return value + '%'
+					}
                 }
             }]
         }
@@ -785,6 +789,7 @@ $doc.ready(function() {
 				$('#result').fadeIn(function(){
 					resizeFrame();
 				});
+				//Also fade in the visual analysis 
 			}
 		});
 	});
