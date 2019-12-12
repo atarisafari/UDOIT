@@ -23,7 +23,7 @@ var $doc = $(document); // hold a jquery doc reference
 function displayAnalytics(results) {
 	//Probably need to add divs instead of having them premade and trying to target them
 	//That way we dont have onload issues
-	$('#errorSummary panel-body').append(`<canvas id="myChart"></canvas>`);
+	$('.errorSummary panel-body').append(`<canvas id="myChart"></canvas>`);
 	var ctx = document.getElementById('myChart').getContext('2d');
 	results = JSON.parse(results);
 	var data = {
