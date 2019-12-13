@@ -70,8 +70,7 @@ function displayAnalytics(results) {
 
 	var chart = new Chart(doughnut, {
 		type: 'doughnut',
-		data: data,
-		options: options
+		data: data
 	})
 }
 
