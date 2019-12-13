@@ -23,8 +23,8 @@ var $doc = $(document); // hold a jquery doc reference
 function displayAnalytics(results) {
 	//Probably need to add divs instead of having them premade and trying to target them
 	//That way we dont have onload issues
-	// var $newDiv = $('<canvas id="myChart"></canvas>');
-	// $('.errorSummary panel-body').append($newDiv);
+	var $newDiv = $('<canvas id="myChart"></canvas>');
+	$('.errorSummary panel-body').append($newDiv);
 	var ctx = document.getElementById('myChart').getContext('2d');
 	results = JSON.parse(results);
 	var data = {
@@ -70,12 +70,12 @@ function displayAnalytics(results) {
 		options: options
 	});
 
-	var doughnut = document.getElementById('secondChart').getContext('2d');
+	// var doughnut = document.getElementById('secondChart').getContext('2d');
 
-	var chart = new Chart(doughnut, {
-		type: 'doughnut',
-		data: data
-	})
+	// var chart = new Chart(doughnut, {
+	// 	type: 'doughnut',
+	// 	data: data
+	// })
 }
 
 function prepareAnalytics(reportID) {
@@ -87,7 +87,8 @@ function prepareAnalytics(reportID) {
 			console.log(error);
 		},
 		success: function(data){
-			$( document ).ready(displayAnalytics(data));
+			// $( document ).ready(displayAnalytics(data));
+			displayAnalytics(data)
 		}
 	});
 }
