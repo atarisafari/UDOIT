@@ -170,7 +170,7 @@ function checkScanProgress(jobGroup){
 					$('#udoitForm button.submit')
 					.html(`<div id="popup"><div class="circle-white"></div></div>Loading Results`);
 					loadScanResults(progressResult.reportID);
-					prepareAnalytics(progressResult.reportID);
+					$( document ).ready(prepareAnalytics(progressResult.reportID));
 					return;
 				}
 				else{
