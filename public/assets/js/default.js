@@ -23,11 +23,26 @@ var $doc = $(document); // hold a jquery doc reference
 function displayAnalytics(results) {
 	var ctx = document.getElementById('myChart').getContext('2d');
 	results = JSON.parse(results);
+	nums = [30, 40, 45, 60, 100]
+	colors = []
+
+	for(var i = 0; i < nums.length; i++){
+		if(nums[i] < 40) {
+			colors.push('#C70C0C');
+		}
+		else if(nums[i] < 80) {
+			colors.push('#E1F617')
+		}
+		else {
+			colors.push('#41DD0A')
+		}
+	}
+	
 	var data = {
 		datasets: [{
-			backgroundColor: ["#757780", "#d2cca1","#387780", "#dbd4d3", "#e83151"],
 			// data: [results.error_count, results.suggestion_count, results.unscannable_count],
-			data: [30, 40, 45, 60, 100],
+			data: nums,
+			backgroundColor: colors,
 		}],
 		// labels: [
 		// 	'Error Count',
