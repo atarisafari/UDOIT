@@ -44,8 +44,6 @@ function displayAnalytics(results) {
 	}
 
 	var options = {
-		responsive: false,
-		maintainAspectRatio: false,
 		title: {
 			display: true,
 			text: "Report Analytics"
@@ -70,6 +68,10 @@ function displayAnalytics(results) {
 
 	var doughnut = document.getElementById('secondChart').getContext('2d');
 
+	var options = {
+		responsive:true,
+		maintainAspectRatio: false
+	}
 	var chart = new Chart(doughnut, {
 		type: 'doughnut',
 		data: data
