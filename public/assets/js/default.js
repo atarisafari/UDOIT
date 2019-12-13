@@ -21,8 +21,6 @@ var progressTimer = null;
 var $doc = $(document); // hold a jquery doc reference
 
 function displayAnalytics(results) {
-	//Probably need to add divs instead of having them premade and trying to target them
-	//That way we dont have onload issues
 	var ctx = document.getElementById('myChart').getContext('2d');
 	results = JSON.parse(results);
 	var data = {
@@ -46,6 +44,8 @@ function displayAnalytics(results) {
 	}
 
 	var options = {
+		responsive:true,
+		maintainAspectRatio: false,
 		title: {
 			display: true,
 			text: "Report Analytics"
