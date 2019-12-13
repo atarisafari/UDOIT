@@ -44,7 +44,7 @@ function displayAnalytics(results) {
 	}
 
 	var options = {
-		responsive:true,
+		responsive: false,
 		maintainAspectRatio: false,
 		title: {
 			display: true,
