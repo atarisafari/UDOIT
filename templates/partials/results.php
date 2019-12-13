@@ -32,11 +32,11 @@ global $file_scan_size_limit;
 			<h2>Report Summary</h2>
 		</div>
 		<div class="errorSummary panel-body" style="display: block;">
-			<div>
-				<canvas id="myChart" width='10px' height='10px'></canvas>
+			<div height='100px' width='100px'>
+				<canvas id="myChart"></canvas>
 			</div>
-			<div>
-				<canvas id="secondChart" width='10px' height='10px'></canvas>
+			<div height='100px' width='100px'>
+				<canvas id="secondChart"></canvas>
 			</div>
 			<?php if( !empty($error_summary) ): ?>
 			<div class="panel panel-danger">
