@@ -68,10 +68,6 @@ function displayAnalytics(results) {
 
 	var doughnut = document.getElementById('secondChart').getContext('2d');
 
-	var options = {
-		responsive: true,
-		maintainAspectRatio: false
-	}
 	var chart = new Chart(doughnut, {
 		type: 'doughnut',
 		data: data,
