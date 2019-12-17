@@ -31,10 +31,10 @@ function displayAnalytics(results) {
 			colors.push('#C70C0C');
 		}
 		else if(nums[i] < 80) {
-			colors.push('#E1F617')
+			colors.push('#E1E703')
 		}
 		else {
-			colors.push('#41DD0A')
+			colors.push('#36BA11')
 		}
 	}
 	
