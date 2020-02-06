@@ -31,7 +31,36 @@ $settings = [
 
 $this->layout('template', $settings);
 
+// // Start Session Fix
+// session_start();
+// $page_url = "http://www.facebook.com/pages/.../...?sk=app_...";
+// if (isset($_GET["start_session"]))
+//     die(header("Location:" . $page_url));
+// $sid = session_id();
+// if (!isset($_GET["sid"]))
+// {
+//     if(isset($_POST["signed_request"]))
+//        $_SESSION["signed_request"] = $_POST["signed_request"];
+//     die(header("Location:?sid=" . $sid));
+// }
+// if (empty($sid) || $_GET["sid"] != $sid)
+//     die('<script>top.window.location="?start_session=true";</script>');
+// // End Session Fix
+
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+$url = "https://";   
+else  
+$url = "http://";   
+// Append the host(domain name, ip) to the URL.   
+$url.= $_SERVER['HTTP_HOST'];   
+
+// Append the requested resource location to the URL   
+$url.= $_SERVER['REQUEST_URI'];    
+
+echo $url;  
+
 ?>
+
 <ul class="nav nav-tabs nav-justified" role="tablist">
 	<li role="presentation" class="active"><a href="#scanner" role="tab" data-toggle="tab">Scan Course</a></li>
 	<li role="presentation"><a href="#cached" role="tab" data-toggle="tab">View Old Reports</a></li>
