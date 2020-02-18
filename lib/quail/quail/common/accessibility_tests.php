@@ -5759,6 +5759,7 @@ class tableDataShouldHaveTh extends quailTableTest
 		$tables = $this->getAllElements('table');
 
 		foreach ($tables as $table) {
+			$rowContainer = NULL;
 			foreach ($table->childNodes as $child) {
 				// If $child is thead, tbody, tfoot, or tr then we can evaluate
 				if (
