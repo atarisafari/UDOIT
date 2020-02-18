@@ -324,7 +324,7 @@ class Ufixit
                 global $logger;
 
                 if($trs === NULL) {
-                    $logger->addError('No rows in table');
+                    $logger->addError('No cols in table');
                 }
 
                 foreach ($trs as $tr) {
@@ -344,6 +344,12 @@ class Ufixit
             case 'row':
                 $tr              = $this->dom->getElementsByTagName('tr')->item(0);
                 $new_data['old'] = $this->dom->saveHTML($tr);
+
+                global $logger;
+
+                if($tr === NULL) {
+                    $logger->addError('No cols in table');
+                }
 
                 for ($i = $tr->childNodes->length; --$i >= 0;) {
                     $td = $tr->childNodes->item($i);
