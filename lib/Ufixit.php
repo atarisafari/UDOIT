@@ -321,6 +321,12 @@ class Ufixit
             case 'col':
                 $trs = $this->dom->getElementsByTagName('tr');
 
+                global $logger;
+
+                if($trs === NULL) {
+                    $logger->addError('No rows in table');
+                }
+
                 foreach ($trs as $tr) {
                     $new_data['old'] .= $this->dom->saveHTML($tr);
                 }
