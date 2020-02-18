@@ -6227,9 +6227,17 @@ class tableThShouldHaveScope extends quailTest
 	*/
 	function check()
 	{
+		// @see https://www.w3.org/WAI/EO/Drafts/tutorials/tables/scope/
+		$SUPPORTED_SCOPE_VALUES = [
+			'row',
+			'col',
+			'rowgroup',
+			'colgroup'
+		];
+
 		foreach ($this->getAllElements('th') as $th) {
 			if ($th->hasAttribute('scope')) {
-				if ($th->getAttribute('scope') != 'col' && $th->getAttribute('scope') != 'row') {
+				if (!in_array(strtolower($th->getAttribute('scope')), $SUPPORTED_SCOPE_VALUES, TRUE)) {
 					$this->addReport($th);
 				}
 			} else {
