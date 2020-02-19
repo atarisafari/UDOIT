@@ -5760,7 +5760,6 @@ class tableDataShouldHaveTh extends quailTableTest
 
 		foreach ($tables as $table) {
 			foreach ($table->childNodes as $child) {
-				$rowContainer = NULL;
 				// If $child is thead, tbody, tfoot, or tr then we can evaluate
 				if (
 					$this->propertyIsEqual($child, 'tagName', 'thead') ||
@@ -5786,9 +5785,11 @@ class tableDataShouldHaveTh extends quailTableTest
 		if (is_null($rowContainer) || is_null($rowContainer->childNodes)) return false;
 
 		foreach ($rowContainer->childNodes as $row) {
-			foreach ($row->childNodes as $column) {
-				if ($this->propertyIsEqual($column, 'tagName', 'th'))
-					return true;
+			if(!is_null($row->childNodes)) {
+				foreach ($row->childNodes as $column) {
+					if ($this->propertyIsEqual($column, 'tagName', 'th'))
+						return true;
+				}
 			}
 		}
 
