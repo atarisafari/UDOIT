@@ -5759,8 +5759,8 @@ class tableDataShouldHaveTh extends quailTableTest
 		$tables = $this->getAllElements('table');
 
 		foreach ($tables as $table) {
-			$rowContainer = NULL;
 			foreach ($table->childNodes as $child) {
+				$rowContainer = NULL;
 				// If $child is thead, tbody, tfoot, or tr then we can evaluate
 				if (
 					$this->propertyIsEqual($child, 'tagName', 'thead') ||
